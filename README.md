@@ -1,4 +1,4 @@
-# spyRobots
+# spyRobot
 
 Monitor competitor robots.txt for changes
 
