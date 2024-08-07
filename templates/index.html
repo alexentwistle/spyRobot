@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpyRobot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>SEO Monitoring Tool</h1>
+    <form method="post" action="/add">
+        <input type="text" name="domain" placeholder="Enter domain">
+        <button type="submit">Add Domain</button>
+    </form>
+    <ul>
+        {% for domain in domains %}
+            <li>{{ domain[1] }} - Last checked: {{ domain[3] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/check">Check All Domains</a>
+</body>
+</html>
