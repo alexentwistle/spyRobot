@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
 import requests
 from datetime import datetime
+from init_db import init_db  # Ensure this import is correct
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'default_secret_key')
@@ -73,6 +74,5 @@ def send_notification(domain):
         server.sendmail(msg['From'], [msg['To']], msg.as_string())
 
 if __name__ == '__main__':
-    from init_db import init_db
     init_db()
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
