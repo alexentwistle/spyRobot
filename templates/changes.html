@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpyRobot - Changes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>SpyRobot - Logged Changes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Domain</th>
+                <th>Change</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for change in changes %}
+            <tr>
+                <td>{{ change[0] }}</td>
+                <td>{{ change[1] }}</td>
+                <td>{{ change[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

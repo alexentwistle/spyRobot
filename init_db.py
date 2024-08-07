@@ -1,4 +1,3 @@
-# init_db.py
 import sqlite3
 
 def init_db():
@@ -10,6 +9,15 @@ def init_db():
         domain TEXT NOT NULL,
         last_checked TEXT,
         last_checked_at TIMESTAMP
+    )
+    ''')
+    cur.execute('''
+    CREATE TABLE IF NOT EXISTS changes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        domain_id INTEGER,
+        change_text TEXT,
+        change_time TIMESTAMP,
+        FOREIGN KEY(domain_id) REFERENCES domains(id)
     )
     ''')
     conn.commit()
