@@ -72,6 +72,15 @@ def check_domains():
     flash('Domains checked successfully!')
     return redirect(url_for('index'))
 
+@app.route('/delete/<int:domain_id>', methods=['POST'])
+def delete_domain(domain_id):
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute('DELETE FROM domains WHERE id = ?', (domain_id,))
+    conn.commit()
+    flash('Domain deleted successfully!')
+    return redirect(url_for('index'))
+
 @app.route('/changes')
 def view_changes():
     conn = get_db()
