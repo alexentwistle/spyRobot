@@ -15,6 +15,8 @@ You can also monitor your own robots.txt file to get informed of any accidental 
 3. spyRobot will store and display the latest versions of the files
 4. spyRobot will let you know what, if anything, has changed 
 
+Currently available at https://spyrobot.onrender.com/
+
 ## Future imporovements 
 * Add automated daily checking
 * Add email notification for changes
